@@ -6,15 +6,20 @@ Returns: an integer
 
 def single_number(arr):
     # # Your code here
-    dupe_num = set()
-
+    # create variable to store the single number
+    num = 0
+    # print(f'This is old num --> {num}')
+    # loop over array
     for i in arr:
-        if i not in dupe_num:
-            dupe_num.add(i)
-        else:
-            dupe_num.remove(i)
-
-    return dupe_num
+        # print(f'This is item {i}')
+        # using count() in the array to look for the single number
+        if arr.count(i) <= 1:
+            # print(f'This is num inside of the loop-->{num}')
+            # print(f'This is Item inside if statement {i}')
+            # assign i to num
+            num = i
+            # print(f'Newest num {num}')
+    return num
 
 
 print(single_number([1, 1, 2, 3, 3]))
