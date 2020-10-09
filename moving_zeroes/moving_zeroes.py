@@ -13,22 +13,25 @@ def moving_zeroes(arr):
 
     # for i in range(len(arr)):
     #     if arr[i] == 0:
+    #         # print(f'This is i', arr[i])
     #         arr[i] = popped_element
+    #         # print(f'popped', popped_element)
     #         arr.pop(i)
     #         arr.append(popped_element)
     # return arr
 
-    popped_element = 0
+    new_arr = []
 
-    for i in range(len(arr)):
-        if arr[i] == 0:
-            # print(f'This is i', arr[i])
-            arr[i] = popped_element
-            popped_element = arr[i]
-            # print(f'popped', popped_element)
-            arr.pop(i)
-            arr.append(popped_element)
-    return arr
+    for i in arr:
+        # print(f'i', i)
+        if i != 0:
+            # insert numbers other than zero in the new_arr array
+            new_arr.insert(0, i)
+            # print(f'new_arr', new_arr)
+        else:
+            # after every loop if its zero append to end or new_arr array.
+            new_arr.append(0)
+    return new_arr
 
 
 print(f'moving zeroes {moving_zeroes([1, 0, 2, -2, 0, 3])}')
